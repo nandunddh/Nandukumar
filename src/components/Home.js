@@ -2,7 +2,7 @@ import React from 'react'
 import profileimage from '../images/profileimage.png'
 // import aboutme from '../images/aboutme.jpg'
 import aboutme from '../images/about-us.jpg'
-import resume from "../assets/pdfs/Cv-Resume.pdf"
+import resume from '../assets/pdfs/Cv-Resume.pdf'
 
 const Home = () => {
   return (
@@ -76,7 +76,12 @@ const Home = () => {
         <div className="container bg-dark my-5 py-4 about" id="about">
           <div className="row text-white">
             <div className="col-sm-5 align-self-center me-5">
-              <img src={aboutme} alt='About Me image' width="100%" className='rounded-5 about-image'/>
+              <img
+                src={aboutme}
+                alt="About Me image"
+                width="100%"
+                className="rounded-5 about-image"
+              />
             </div>
             <div className="col-sm-6 ps-4">
               <p className="big">About</p>
@@ -151,11 +156,11 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="container bg-dark my-5 py-5 resume" id="resume">
+        <div className="container bg-dark my-5 py-5 resume" id="Academics">
           <div className="text-white">
             <div className="text-center">
-              <p className="big bigresume text-center">Resume</p>
-              <p className="fs-1 fw-bold">Resume</p>
+              <p className="big bigresume text-center">Academics</p>
+              <p className="fs-1 fw-bold">Academics</p>
               <p className="fs-5 pt-3 aboutdesc">
                 A small river named Nandu flows by their place and suppliest it
                 witth the necessary regelialia.
@@ -165,64 +170,69 @@ const Home = () => {
               <div className="col-sm-6 py-4">
                 <div className="bg-lightshade rounded">
                   <h1 className="text-warning fw-bold">2015-2016</h1>
-                  <h1 className="">SSC - High School</h1>
+                  <h1 className="">Secondary School</h1>
                   <h6 className="color-gray fw-bold">
                     OASIS SCHOOL OF EXCELLENCE
                   </h6>
-                  <h6 className="color-gray fw-bold my-3">
-                    A small river named Nandu flows by their place and suppliest
-                    it witth the necessary regelialia. A small river named Nandu
-                    flows by their place and suppliest it witth the necessary
-                    regelialia.
+                  <h6 className="color-gray fw-bold">
+                    8.7 CGPA
                   </h6>
                 </div>
               </div>
               <div className="col-sm-6 py-4">
                 <div className="bg-lightshade rounded">
-                  <h1 className="text-warning fw-bold">2015-2016</h1>
-                  <h1 className="">SSC - High School</h1>
-                  <h6 className="color-gray fw-bold">
-                    OASIS SCHOOL OF EXCELLENCE
+                  <h1 className="text-warning fw-bold">2016-2019</h1>
+                  <h1 className="">Diploma In Computer's</h1>
+                  <h6 className="color-gray fw-bold text-uppercase text-justify">
+                    TRR College of Technology
                   </h6>
-                  <h6 className="color-gray fw-bold my-3">
-                    A small river named Nandu flows by their place and suppliest
-                    it witth the necessary regelialia. A small river named Nandu
-                    flows by their place and suppliest it witth the necessary
-                    regelialia.
+                  <h6 className="color-gray fw-bold text-uppercase text-justify">
+                    77%
                   </h6>
+                  {/* <h6 className="color-gray fw-bold my-3">
+                    A Diploma in Computer Engineering is a diploma programme
+                    that provides fundamental knowledge on computer science,
+                    mathematics and computing techniques and engineering
+                    concepts.
+                  </h6> */}
                 </div>
               </div>
               <div className="col-sm-6 py-4">
                 <div className="bg-lightshade rounded">
-                  <h1 className="text-warning fw-bold">2015-2016</h1>
-                  <h1 className="">SSC - High School</h1>
-                  <h6 className="color-gray fw-bold">
-                    OASIS SCHOOL OF EXCELLENCE
+                  <h1 className="text-warning fw-bold">2019-2022</h1>
+                  <h1 className="">B.Tech - Computer Science Engineering</h1>
+                  <h6 className="color-gray fw-bold text-uppercase">
+                    J.B. Institute of Engineering & Technology
                   </h6>
-                  <h6 className="color-gray fw-bold my-3">
-                    A small river named Nandu flows by their place and suppliest
-                    it witth the necessary regelialia. A small river named Nandu
-                    flows by their place and suppliest it witth the necessary
-                    regelialia.
+                  <h6 className="color-gray fw-bold text-uppercase">
+                    7.4 GPA
                   </h6>
+                  {/* <h6 className="color-gray fw-bold my-3 text-justify">
+                    B.Tech (CSE) is a 4 year undergraduate course offering
+                    specialization in computer programming languages and
+                    computer system technologies.
+                  </h6> */}
                 </div>
               </div>
               <div className="col-sm-6 py-4">
                 <div className="bg-lightshade rounded">
-                  <h1 className="text-warning fw-bold">2015-2016</h1>
-                  <h1 className="">SSC - High School</h1>
-                  <h6 className="color-gray fw-bold">
-                    OASIS SCHOOL OF EXCELLENCE
-                  </h6>
-                  <h6 className="color-gray fw-bold my-3">
-                    A small river named Nandu flows by their place and suppliest
-                    it witth the necessary regelialia. A small river named Nandu
-                    flows by their place and suppliest it witth the necessary
-                    regelialia.
-                  </h6>
+                  <h1 className="text-warning fw-bold">
+                    August 2022-October 2022
+                  </h1>
+                  <h1 className="">MERN Stack Web Development Course</h1>
+                  <h6 className="color-gray fw-bold pb-4">Henry Harvin Education </h6>
+                
+                  {/* <h6 className="color-gray fw-bold my-3 text-justify">
+                    MERN stack is the most in-demand Full Stack Web Development
+                    structure. It helps in the enhancement of Applications. MERN
+                    Stack covers both back-end and front-end servers and equips
+                    the learner with the advantage of using a single programming
+                    language i.e JavaScript, making it the most effective Web
+                    Development process.
+                  </h6> */}
                 </div>
               </div>
-              <div className="text-center">
+              <div className="text-center mt-4">
                 <button className="btn btn-warning px-4 py-3 fw-bold rounded-pill">
                   <a
                     href={resume}
@@ -237,7 +247,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="container bg-dark py-5 resume">
+        <div className="container bg-dark pb-5 resume">
           <h1 className="text-white text-center border border-white">
             {' '}
             Remaning Will be updated Soon...

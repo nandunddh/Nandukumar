@@ -35,8 +35,8 @@ const Navbar = () => {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link text-white" href="#resume">
-              Resume
+            <a className="nav-link text-white" href="#Academics">
+            Academics
             </a>
           </li>
           <li className="nav-item">
