@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Nandukumar/static/css/main.2cd941c2.css",
+    "main.js": "/Nandukumar/static/js/main.0d8c90ff.js",
+    "static/js/787.34761b34.chunk.js": "/Nandukumar/static/js/787.34761b34.chunk.js",
+    "static/media/profileimage.png": "/Nandukumar/static/media/profileimage.37877d43ec0a322f822f.png",
+    "index.html": "/Nandukumar/index.html",
+    "main.2cd941c2.css.map": "/Nandukumar/static/css/main.2cd941c2.css.map",
+    "main.0d8c90ff.js.map": "/Nandukumar/static/js/main.0d8c90ff.js.map",
+    "787.34761b34.chunk.js.map": "/Nandukumar/static/js/787.34761b34.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2cd941c2.css",
+    "static/js/main.0d8c90ff.js"
+  ]
+}
