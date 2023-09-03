@@ -36,3 +36,76 @@
     transform: rotate(360deg);
   }
 }
+
+.text-warning{
+  color: #ffbd39 !important;
+}
+
+.btn-warning{
+  background-color: #ffbd39 !important;
+}
+.btn-warning:hover{
+  background-color: #ffff;
+  color: #000;
+  border-color: #fff;
+}
+
+.nav .nav-item Link:hover{
+  color: #ffbd39 !important;
+}
+body{
+  font-family: monospace;
+}
+
+.profileimage{
+  border-radius: 55%;
+  width: 100%;
+  height: 100%;
+}
+
+/* .display-2{
+  font-size: 4vw;
+} */
+
+.big{
+  position: absolute;
+  font-size: 7vw;
+  color: rgba(255,255,255,0.1);
+  /* z-index: -1; */
+  font-weight: 900;
+  top: 0px;
+}
+
+.bigresume{
+  left:0;
+  top: 0px;
+  right: 0px;
+}
+
+.about{
+  position: relative;
+}
+.resume{
+  position: relative;
+}
+.about .fs-1{
+  font-size: 4vw !important;
+}
+.resume .fs-1{
+  font-size: 5vw !important;
+}
+.about .aboutdesc{
+  color: #999999;
+}
+.resume .aboutdesc{
+  color: #999999;
+}
+
+.bg-lightshade{
+  background-color: rgba(255,255,255,0.1);
+  padding: 5%;
+}
+
+.color-gray{
+  color: #999999;
+}
