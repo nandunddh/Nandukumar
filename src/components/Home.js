@@ -1,12 +1,13 @@
 import React from 'react'
 import profileimage from '../images/profileimage.png'
+import resume from "../assets/pdfs/Cv-Resume.pdf"
 
 const Home = () => {
   return (
     <>
       <div className="containerfulid bg-dark">
         <div
-          id="carouselExampleSlidesOnly"
+          id="bannner"
           className="carousel slide mb-5 pt-3"
           data-bs-ride="carousel"
         >
@@ -29,7 +30,14 @@ const Home = () => {
                         </span>
                       </p>
                       <button className="btn btn-warning fw-bold fs-6 rounded-pill py-3 px-4">
-                        Download CV
+                        <a
+                          href={resume}
+                          target="_blank"
+                          download="Nandu-Resume"
+                          rel="noreferrer"
+                        >
+                          Download CV
+                        </a>
                       </button>
                       <button className="ms-3 btn btn-outline-light fw-bold fs-6 rounded-pill py-3 px-4">
                         Contact Me
@@ -63,7 +71,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="container bg-dark my-5 py-4 about">
+        <div className="container bg-dark my-5 py-4 about" id="about">
           <div className="row text-white">
             <div className="col-sm-5"></div>
             <div className="col-sm-7">
@@ -127,12 +135,19 @@ const Home = () => {
                 </p>
               </div>
               <button className="mt-2 btn-warning text-dark px-4 py-3 rounded-pill border-0 fw-bold">
-                DOWNLOAD CV
+                <a
+                  href={resume}
+                  target="_blank"
+                  download="Nandu-Resume"
+                  rel="noreferrer"
+                >
+                  Download CV
+                </a>
               </button>
             </div>
           </div>
         </div>
-        <div className="container bg-dark my-5 py-5 resume">
+        <div className="container bg-dark my-5 py-5 resume" id="resume">
           <div className="text-white">
             <div className="text-center">
               <p className="big bigresume text-center">Resume</p>
@@ -205,14 +220,24 @@ const Home = () => {
               </div>
               <div className="text-center">
                 <button className="btn btn-warning px-4 py-3 fw-bold rounded-pill">
-                  DOWNLOAD CV
+                  <a
+                    href={resume}
+                    target="_blank"
+                    download="Nandu-Resume"
+                    rel="noreferrer"
+                  >
+                    Download CV
+                  </a>
                 </button>
               </div>
             </div>
           </div>
         </div>
         <div className="container bg-dark py-5 resume">
-          <h1 className='text-white text-center border border-white'> Remaning Will be updated Soon...</h1>
+          <h1 className="text-white text-center border border-white">
+            {' '}
+            Remaning Will be updated Soon...
+          </h1>
         </div>
       </div>
     </>

@@ -8,10 +8,10 @@ function App() {
     <>
       <Home />
       <Navbar />
-
+{/* 
       <Routes>
         <Route path="/" element={<Home />} />
-      </Routes>
+      </Routes> */}
     </>
   )
 }

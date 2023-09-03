@@ -5,8 +5,8 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-dark py-3" data-bs-theme="dark">
       <div className="container">
-        <Link className="navbar-brand text-white fs-3 fw-bold" href="#">
-          Navbar
+        <Link className="navbar-brand text-white fs-3 fw-bold" to="#banner">
+          ND
         </Link>
         <button
           className="navbar-toggler"
@@ -24,18 +24,18 @@ const Navbar = () => {
             <Link
               className="nav-link active text-warning"
               aria-current="page"
-              to="#"
+              to="#banner"
             >
               Home
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link text-white" to="#">
+            <Link className="nav-link text-white" to="#about">
               About
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link text-white" to="#">
+            <Link className="nav-link text-white" to="#resume">
               Resume
             </Link>
           </li>
