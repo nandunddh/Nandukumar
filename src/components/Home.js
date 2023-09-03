@@ -75,23 +75,26 @@ const Home = () => {
 
         <div className="container bg-dark my-5 py-4 about" id="about">
           <div className="row text-white">
-            <div className="col-sm-5 align-self-center me-5">
+            {/* <div className="col-sm-5 align-self-center me-5">
               <img
                 src={aboutme}
                 alt="About Me image"
                 width="100%"
                 className="rounded-5 about-image"
               />
-            </div>
-            <div className="col-sm-6 ps-4">
-              <p className="big">About</p>
-              <p className="fs-1 fw-bold ps-3">About Me</p>
-              <p className="fs-5 pt-3 aboutdesc text-justify">
-                Hello, I'm Nandu Kumar and I work as a web developer.<br/>I have been
-                working as a web developer. I believe I
-                am a very ambitious person who loves to work on making the
-                website work well. Working on the web is my passion as I love to
-                work on exciting projects.
+            </div> */}
+              <div className="text-center">
+                <p className="big bigresume text-center">About</p>
+                <p className="fs-1 fw-bold text-center">About Me</p>
+              </div>
+            <div className="col-sm-3"></div>
+            <div className="col-sm-8">
+              <p className="fs-5 pt-3 aboutdesc text-justify text-center">
+                Hello, I'm Nandu Kumar and I work as a web developer.
+                <br />I have been working as a web developer. I believe I am a
+                very ambitious person who loves to work on making the website
+                work well. Working on the web is my passion as I love to work on
+                exciting projects.
               </p>
               <div className="row pt-4">
                 <div className="col-sm-4">
