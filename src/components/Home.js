@@ -86,12 +86,15 @@ const Home = () => {
             <div className="col-sm-6 ps-4">
               <p className="big">About</p>
               <p className="fs-1 fw-bold ps-3">About Me</p>
-              <p className="fs-5 pt-3 aboutdesc">
-                A small river named Nandu flows by their place and suppliest it
-                witth the necessary regelialia.
+              <p className="fs-5 pt-3 aboutdesc text-justify">
+                Hello, I'm Nandu Kumar and I work as a web developer.<br/>I have been
+                working as a web developer. I believe I
+                am a very ambitious person who loves to work on making the
+                website work well. Working on the web is my passion as I love to
+                work on exciting projects.
               </p>
-              <div className="row">
-                <div className="col-sm-2">
+              <div className="row pt-4">
+                <div className="col-sm-4">
                   <p className="fw-bold fs-5">Name:</p>
                 </div>
                 <div className="col-sm-auto">
@@ -99,7 +102,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="row">
-                <div className="col-sm-2">
+                <div className="col-sm-4">
                   <p className="fw-bold fs-5">Date of birth:</p>
                 </div>
                 <div className="col-sm-auto">
@@ -107,7 +110,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="row">
-                <div className="col-sm-2">
+                <div className="col-sm-4">
                   <p className="fw-bold fs-5">Address:</p>
                 </div>
                 <div className="col-sm-auto">
@@ -115,7 +118,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="row">
-                <div className="col-sm-2">
+                <div className="col-sm-4">
                   <p className="fw-bold fs-5">Zip code:</p>
                 </div>
                 <div className="col-sm-auto">
@@ -123,7 +126,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="row">
-                <div className="col-sm-2">
+                <div className="col-sm-4">
                   <p className="fw-bold fs-5">Email:</p>
                 </div>
                 <div className="col-sm-auto">
@@ -131,7 +134,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="row">
-                <div className="col-sm-2">
+                <div className="col-sm-4">
                   <p className="fw-bold fs-5">Phone:</p>
                 </div>
                 <div className="col-sm-auto">
@@ -161,10 +164,10 @@ const Home = () => {
             <div className="text-center">
               <p className="big bigresume text-center">Academics</p>
               <p className="fs-1 fw-bold">Academics</p>
-              <p className="fs-5 pt-3 aboutdesc">
+              {/* <p className="fs-5 pt-3 aboutdesc">
                 A small river named Nandu flows by their place and suppliest it
                 witth the necessary regelialia.
-              </p>
+              </p> */}
             </div>
             <div className="row pb-5">
               <div className="col-sm-6 py-4">
@@ -174,9 +177,7 @@ const Home = () => {
                   <h6 className="color-gray fw-bold">
                     OASIS SCHOOL OF EXCELLENCE
                   </h6>
-                  <h6 className="color-gray fw-bold">
-                    8.7 CGPA
-                  </h6>
+                  <h6 className="color-gray fw-bold">8.7 CGPA</h6>
                 </div>
               </div>
               <div className="col-sm-6 py-4">
@@ -204,9 +205,7 @@ const Home = () => {
                   <h6 className="color-gray fw-bold text-uppercase">
                     J.B. Institute of Engineering & Technology
                   </h6>
-                  <h6 className="color-gray fw-bold text-uppercase">
-                    7.4 GPA
-                  </h6>
+                  <h6 className="color-gray fw-bold text-uppercase">7.4 GPA</h6>
                   {/* <h6 className="color-gray fw-bold my-3 text-justify">
                     B.Tech (CSE) is a 4 year undergraduate course offering
                     specialization in computer programming languages and
@@ -220,8 +219,10 @@ const Home = () => {
                     August 2022-October 2022
                   </h1>
                   <h1 className="">MERN Stack Web Development Course</h1>
-                  <h6 className="color-gray fw-bold pb-4">Henry Harvin Education </h6>
-                
+                  <h6 className="color-gray fw-bold pb-4">
+                    Henry Harvin Education{' '}
+                  </h6>
+
                   {/* <h6 className="color-gray fw-bold my-3 text-justify">
                     MERN stack is the most in-demand Full Stack Web Development
                     structure. It helps in the enhancement of Applications. MERN
