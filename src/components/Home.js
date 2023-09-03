@@ -1,5 +1,7 @@
 import React from 'react'
 import profileimage from '../images/profileimage.png'
+// import aboutme from '../images/aboutme.jpg'
+import aboutme from '../images/about-us.jpg'
 import resume from "../assets/pdfs/Cv-Resume.pdf"
 
 const Home = () => {
@@ -73,8 +75,10 @@ const Home = () => {
 
         <div className="container bg-dark my-5 py-4 about" id="about">
           <div className="row text-white">
-            <div className="col-sm-5"></div>
-            <div className="col-sm-7">
+            <div className="col-sm-5 align-self-center me-5">
+              <img src={aboutme} alt='About Me image' width="100%" className='rounded-5 about-image'/>
+            </div>
+            <div className="col-sm-6 ps-4">
               <p className="big">About</p>
               <p className="fs-1 fw-bold ps-3">About Me</p>
               <p className="fs-5 pt-3 aboutdesc">
