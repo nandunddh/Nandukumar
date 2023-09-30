@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Nandukumar/static/css/main.190c64f5.css",
-    "main.js": "/Nandukumar/static/js/main.61fd52c7.js",
-    "static/media/about-us.jpg": "/Nandukumar/static/media/about-us.49b4d4fc4d5f310b02e4.jpg",
+    "main.css": "/Nandukumar/static/css/main.35a9d7a1.css",
+    "main.js": "/Nandukumar/static/js/main.f11323ee.js",
     "static/media/profileimage.png": "/Nandukumar/static/media/profileimage.37877d43ec0a322f822f.png",
+    "static/media/footer-image.jpg": "/Nandukumar/static/media/footer-image.d86c900be96e560271fa.jpg",
     "static/media/Cv-Resume.pdf": "/Nandukumar/static/media/Cv-Resume.5cf1e42435b9d69b90e3.pdf",
     "index.html": "/Nandukumar/index.html",
-    "main.190c64f5.css.map": "/Nandukumar/static/css/main.190c64f5.css.map",
-    "main.61fd52c7.js.map": "/Nandukumar/static/js/main.61fd52c7.js.map"
+    "main.35a9d7a1.css.map": "/Nandukumar/static/css/main.35a9d7a1.css.map",
+    "main.f11323ee.js.map": "/Nandukumar/static/js/main.f11323ee.js.map"
   },
   "entrypoints": [
-    "static/css/main.190c64f5.css",
-    "static/js/main.61fd52c7.js"
+    "static/css/main.35a9d7a1.css",
+    "static/js/main.f11323ee.js"
   ]
 }
