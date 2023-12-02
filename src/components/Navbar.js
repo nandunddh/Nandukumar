@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-dark py-3" data-bs-theme="dark">
       <div className="container">
-        <Link className="navbar-brand text-white fs-3 fw-bold" to="/">
+        <Link className="navbar-brand text-white fs-3 fw-bold" to="https://nandunddh.github.io/Nandukumar/">
           ND
         </Link>
         <button
@@ -24,7 +24,7 @@ const Navbar = () => {
             <Link
               className="nav-link active text-warning"
               aria-current="page"
-              to="/"
+              to="https://nandunddh.github.io/Nandukumar/"
             >
               Home
             </Link>
@@ -35,17 +35,17 @@ const Navbar = () => {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link text-white" href="#Academics">
+            <a className="nav-link text-white" href="#academics">
             Academics
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link text-white" href="#">
+            <a className="nav-link text-white" href="#services">
               Services
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link text-white" href="#">
+            <a className="nav-link text-white" href="#My Skills">
               Skills
             </a>
           </li>
@@ -55,9 +55,9 @@ const Navbar = () => {
             </a>
           </li>
           <li className="nav-item">
-            <Link className="nav-link text-white" to="contact">
+            <a className="nav-link text-white" href="#Contact">
               Contact
-            </Link>
+            </a>
           </li>
         </ul>
       </div>

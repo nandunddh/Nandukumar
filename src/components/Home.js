@@ -1,8 +1,18 @@
-import React from 'react'
-import profileimage from '../images/profileimage.png'
+import React from "react";
+import profileimage from "../images/profileimage.png";
 // import aboutme from '../images/aboutme.jpg'
-import aboutme from '../images/about-us.jpg'
-import resume from '../assets/pdfs/Cv-Resume.pdf'
+import footerImage from "../assets/footer-image.jpg";
+import resume from "../assets/pdfs/Cv-Resume.pdf";
+import {
+  FaInstagram,
+  FaLinkedin,
+  FaMapLocationDot,
+  FaPhone,
+} from "react-icons/fa6";
+import { AiFillMail, AiOutlineGlobal } from "react-icons/ai";
+import { MdDeveloperMode, MdOutlineMonitor } from "react-icons/md";
+import { CgWebsite } from "react-icons/cg";
+import { SiTaichigraphics } from "react-icons/si";
 
 const Home = () => {
   return (
@@ -21,13 +31,13 @@ const Home = () => {
                     <div className="col-sm-8 mb-5">
                       <p className="text-uppercase fw-bold">Hello!</p>
                       <p className="text-white fw-bold display-2">
-                        I'm a{' '}
+                        I'm a{" "}
                         <span className="text-warning">
                           web <br />
-                          designer{' '}
+                          designer{" "}
                           <span className="text-white">
-                            & <br /> Mern{' '}
-                          </span>{' '}
+                            & <br /> Mern{" "}
+                          </span>{" "}
                           stack developer
                         </span>
                       </p>
@@ -41,8 +51,8 @@ const Home = () => {
                           Download CV
                         </a>
                       </button>
-                      <button className="ms-3 btn btn-outline-light fw-bold fs-6 rounded-pill py-3 px-4">
-                        Contact Me
+                      <button className="ms-3 fw-bold fs-6 rounded-pill py-3 px-4 contact-me">
+                        <a href="https://api.whatsapp.com/send?phone=919010307021">Contact Me</a>
                       </button>
                     </div>
                     <div className="col-sm-4">
@@ -58,7 +68,7 @@ const Home = () => {
             </div>
             <div className="carousel-item">
               <p>
-                I'm{' '}
+                I'm{" "}
                 <span>
                   Nandu
                   <br />
@@ -83,10 +93,10 @@ const Home = () => {
                 className="rounded-5 about-image"
               />
             </div> */}
-              <div className="text-center">
-                <p className="big bigresume text-center">About</p>
-                <p className="fs-1 fw-bold text-center">About Me</p>
-              </div>
+            <div className="text-center">
+              <p className="big bigresume text-center">About</p>
+              <p className="fs-1 fw-bold text-center">About Me</p>
+            </div>
             <div className="col-sm-3"></div>
             <div className="col-sm-8">
               <p className="fs-5 pt-3 aboutdesc text-justify text-center">
@@ -162,7 +172,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="container bg-dark my-5 py-5 resume" id="Academics">
+        <div className="container bg-dark resume" id="academics">
           <div className="text-white">
             <div className="text-center">
               <p className="big bigresume text-center">Academics</p>
@@ -223,7 +233,7 @@ const Home = () => {
                   </h1>
                   <h1 className="">MERN Stack Web Development Course</h1>
                   <h6 className="color-gray fw-bold pb-4">
-                    Henry Harvin Education{' '}
+                    Henry Harvin Education{" "}
                   </h6>
 
                   {/* <h6 className="color-gray fw-bold my-3 text-justify">
@@ -251,15 +261,566 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="container bg-dark pb-5 resume">
-          <h1 className="text-white text-center border border-white">
-            {' '}
-            Remaning Will be updated Soon...
-          </h1>
+        <div className="container bg-dark resume" id="services">
+          <div className="text-white">
+            <div className="text-center">
+              <p className="big bigresume text-center">Services</p>
+              <p className="fs-1 fw-bold">Services</p>
+              {/* <p className="fs-5 pt-3 aboutdesc">
+                A small river named Nandu flows by their place and suppliest it
+                witth the necessary regelialia.
+              </p> */}
+            </div>
+            <div className="row pb-5">
+              <div className="col-sm-3 py-4 ">
+                <div className="bg-lightshade rounded services">
+                  {/* <span class="icon">
+                    <i class="flaticon-analysis"></i>
+                  </span> */}
+                  <MdOutlineMonitor className="service-icon" />
+                  <h3 className="fw-bold text-uppercase fs-5">Web Design</h3>
+                </div>
+              </div>
+              <div className="col-sm-3 py-4 ">
+                <div className="bg-lightshade rounded services">
+                  {/* <span class="icon">
+                    <i class="flaticon-analysis"></i>
+                  </span> */}
+                  <CgWebsite className="service-icon" />
+                  <h3 className="fw-bold text-uppercase fs-5">
+                    Web Development
+                  </h3>
+                </div>
+              </div>
+              <div className="col-sm-3 py-4 ">
+                <div className="bg-lightshade rounded services">
+                  {/* <span class="icon">
+                    <i class="flaticon-analysis"></i>
+                  </span> */}
+                  <MdDeveloperMode className="service-icon" />
+                  <h3 className="fw-bold text-uppercase fs-5">
+                    App Development
+                  </h3>
+                </div>
+              </div>
+              <div className="col-sm-3 py-4 ">
+                <div className="bg-lightshade rounded services">
+                  {/* <span class="icon">
+                    <i class="flaticon-analysis"></i>
+                  </span> */}
+                  <SiTaichigraphics className="service-icon" />
+                  <h3 className="fw-bold text-uppercase fs-5">
+                    Graphic Design
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="container bg-dark resume" id="My Skills">
+          <div className="text-white">
+            <div className="text-center">
+              <p className="big bigresume text-center">My Skills</p>
+              <p className="fs-1 fw-bold">My Skills</p>
+              {/* <p className="fs-5 pt-3 aboutdesc">
+                A small river named Nandu flows by their place and suppliest it
+                witth the necessary regelialia.
+              </p> */}
+            </div>
+            <div className="row pb-5">
+              <div className="col-sm-6 py-4 ">
+                <div className="row">
+                  <div className="col fs-4 fw-500">
+                    <p>HTML</p>
+                  </div>
+                  <div className="col fs-4 fw-500 text-end">
+                    <p>85%</p>
+                  </div>
+                </div>
+                <div
+                  className="progress"
+                  role="progressbar"
+                  aria-label="Animated striped example"
+                  aria-valuenow={85}
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                >
+                  <div
+                    className="progress-bar progress-bar-striped progress-bar-animated bg-warning"
+                    style={{ width: "85%", color: "#fff" }}
+                  >
+                    85%
+                  </div>
+                </div>
+              </div>
+              <div className="col-sm-6 py-4 ">
+                <div className="row">
+                  <div className="col fs-4 fw-500">
+                    <p>CSS</p>
+                  </div>
+                  <div className="col fs-4 fw-500 text-end">
+                    <p>65%</p>
+                  </div>
+                </div>
+                <div
+                  className="progress"
+                  role="progressbar"
+                  aria-label="Animated striped example"
+                  aria-valuenow={65}
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                >
+                  <div
+                    className="progress-bar progress-bar-striped progress-bar-animated bg-warning"
+                    style={{ width: "65%", color: "#fff" }}
+                  >
+                    65%
+                  </div>
+                </div>
+              </div>
+              <div className="col-sm-6 py-4 ">
+                <div className="row">
+                  <div className="col fs-4 fw-500">
+                    <p>JAVASCRIPT</p>
+                  </div>
+                  <div className="col fs-4 fw-500 text-end">
+                    <p>70%</p>
+                  </div>
+                </div>
+                <div
+                  className="progress"
+                  role="progressbar"
+                  aria-label="Animated striped example"
+                  aria-valuenow={70}
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                >
+                  <div
+                    className="progress-bar progress-bar-striped progress-bar-animated bg-warning"
+                    style={{ width: "70%", color: "#fff" }}
+                  >
+                    70%
+                  </div>
+                </div>
+              </div>
+              <div className="col-sm-6 py-4 ">
+                <div className="row">
+                  <div className="col fs-4 fw-500">
+                    <p>BOOTSTRAP</p>
+                  </div>
+                  <div className="col fs-4 fw-500 text-end">
+                    <p>75%</p>
+                  </div>
+                </div>
+                <div
+                  className="progress"
+                  role="progressbar"
+                  aria-label="Animated striped example"
+                  aria-valuenow={75}
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                >
+                  <div
+                    className="progress-bar progress-bar-striped progress-bar-animated bg-warning"
+                    style={{ width: "75%", color: "#fff" }}
+                  >
+                    75%
+                  </div>
+                </div>
+              </div>
+              <div className="col-sm-6 py-4 ">
+                <div className="row">
+                  <div className="col fs-4 fw-500">
+                    <p>REACT NATIVE</p>
+                  </div>
+                  <div className="col fs-4 fw-500 text-end">
+                    <p>50%</p>
+                  </div>
+                </div>
+                <div
+                  className="progress"
+                  role="progressbar"
+                  aria-label="Animated striped example"
+                  aria-valuenow={50}
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                >
+                  <div
+                    className="progress-bar progress-bar-striped progress-bar-animated bg-warning"
+                    style={{ width: "50%", color: "#fff" }}
+                  >
+                    50%
+                  </div>
+                </div>
+              </div>
+              <div className="col-sm-6 py-4 ">
+                <div className="row">
+                  <div className="col fs-4 fw-500">
+                    <p>REACT JS</p>
+                  </div>
+                  <div className="col fs-4 fw-500 text-end">
+                    <p>80%</p>
+                  </div>
+                </div>
+                <div
+                  className="progress"
+                  role="progressbar"
+                  aria-label="Animated striped example"
+                  aria-valuenow={80}
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                >
+                  <div
+                    className="progress-bar progress-bar-striped progress-bar-animated bg-warning"
+                    style={{ width: "80%", color: "#fff" }}
+                  >
+                    80%
+                  </div>
+                </div>
+              </div>
+              <div className="col-sm-6 py-4 ">
+                <div className="row">
+                  <div className="col fs-4 fw-500">
+                    <p>NODE JS</p>
+                  </div>
+                  <div className="col fs-4 fw-500 text-end">
+                    <p>60%</p>
+                  </div>
+                </div>
+                <div
+                  className="progress"
+                  role="progressbar"
+                  aria-label="Animated striped example"
+                  aria-valuenow={60}
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                >
+                  <div
+                    className="progress-bar progress-bar-striped progress-bar-animated bg-warning"
+                    style={{ width: "60%", color: "#fff" }}
+                  >
+                    60%
+                  </div>
+                </div>
+              </div>
+              <div className="col-sm-6 py-4 ">
+                <div className="row">
+                  <div className="col fs-4 fw-500">
+                    <p>PHP</p>
+                  </div>
+                  <div className="col fs-4 fw-500 text-end">
+                    <p>40%</p>
+                  </div>
+                </div>
+                <div
+                  className="progress"
+                  role="progressbar"
+                  aria-label="Animated striped example"
+                  aria-valuenow={40}
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                >
+                  <div
+                    className="progress-bar progress-bar-striped progress-bar-animated bg-warning"
+                    style={{ width: "60%", color: "#fff" }}
+                  >
+                    40%
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section
+          className="ftco-section ftco-hireme img margin-top"
+          style={{ backgroundImage: `url(${footerImage})` }}
+        >
+          <div className="container">
+            <div className="row justify-content-center">
+              <div className="col-md-7 text-center fadeInUp ftco-animated py-5">
+                <h2 className="fw-bold display-6 text-white mb-5">
+                  I'm <span className="text-warning">Available</span> for
+                  freelancing
+                </h2>
+                <p className="my-3">
+                  <a
+                    href="#Contact"
+                    className="btn btn-warning px-4 py-3 fw-bold rounded-pill text-uppercase"
+                  >
+                    Hire me
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div className="container bg-dark resume" id="Contact">
+          <div className="text-white">
+            <div className="text-center pb-5 mt-5">
+              <p className="big bigresume text-center">Contact Me</p>
+              <p className="fs-1 fw-bold">Contact Me</p>
+              {/* <p className="fs-5 pt-3 aboutdesc">
+                A small river named Nandu flows by their place and suppliest it
+                witth the necessary regelialia.
+              </p> */}
+            </div>
+            <div>
+              <div className="row d-flex contact-info mb-5 contact-section">
+                <div className="col-md-6 col-lg-3 ftco-animate fadeInUp ftco-animated">
+                  <div className="align-self-stretch box p-4 text-center">
+                    <div className="icon d-flex align-items-center justify-content-center">
+                      {/* <span className="icon-map-signs" /> */}
+                      <FaMapLocationDot
+                        style={{ fontSize: "40px", color: "#ffbd39" }}
+                      />
+                    </div>
+                    <h4 className="mb-4">Address</h4>
+                    <p>
+                      3-26, Narkhda, Shamshabad, RR.Dist, Telangana, India
+                      501218
+                    </p>
+                  </div>
+                </div>
+                <div className="col-md-6 col-lg-3 ftco-animate fadeInUp ftco-animated">
+                  <div className="align-self-stretch box p-4 text-center">
+                    <div className="icon d-flex align-items-center justify-content-center">
+                      <span className="icon-phone2" />
+                      <FaPhone style={{ fontSize: "40px", color: "#ffbd39" }} />
+                    </div>
+                    <h4 className="mb-4">Contact Number</h4>
+                    <p>
+                      <a href="tel://9010307021" className="text-white">
+                        +91 9010307021
+                      </a>
+                    </p>
+                  </div>
+                </div>
+                <div className="col-md-6 col-lg-3 ftco-animate fadeInUp ftco-animated">
+                  <div className="align-self-stretch box p-4 text-center">
+                    <div className="icon d-flex align-items-center justify-content-center">
+                      <span className="icon-paper-plane" />
+                      <AiFillMail
+                        style={{ fontSize: "40px", color: "#ffbd39" }}
+                      />
+                    </div>
+                    <h4 className="mb-4">Email Address</h4>
+                    <p>
+                      <a
+                        href="mailto:nandukumar985@gmail.com"
+                        className="text-white"
+                      >
+                        nandukumar985@gmail.com
+                      </a>
+                    </p>
+                  </div>
+                </div>
+                <div className="col-md-6 col-lg-3 ftco-animate fadeInUp ftco-animated">
+                  <div className="align-self-stretch box p-4 text-center">
+                    <div className="icon d-flex align-items-center justify-content-center">
+                      <span className="icon-globe" />
+                      <AiOutlineGlobal
+                        style={{ fontSize: "40px", color: "#ffbd39" }}
+                      />
+                    </div>
+                    <h4 className="mb-4">Website</h4>
+                    <p>
+                      <a href="#" className="text-white strike">
+                        <del>updated Soon</del>
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="row no-gutters block-9">
+                <div className="col-sm-2"></div>
+                <div className="col-sm-8">
+                  <form action="#" className="bg-light p-4 p-md-5 contact-form">
+                    <div className="form-group py-3">
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Your Name"
+                      />
+                    </div>
+                    <div className="form-group py-3">
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Your Email"
+                      />
+                    </div>
+                    <div className="form-group py-3">
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Subject"
+                      />
+                    </div>
+                    <div className="form-group py-3">
+                      <textarea
+                        name
+                        id
+                        cols={30}
+                        rows={7}
+                        className="form-control"
+                        placeholder="Message"
+                        defaultValue={""}
+                      />
+                    </div>
+                    <div className="form-group text-center">
+                      <input
+                        type="submit"
+                        defaultValue="Send Message"
+                        className="btn btn-warning px-4 py-3 fw-bold rounded-pill text-uppercase"
+                      />
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <footer className="ftco-footer ftco-section">
+              <div className="container">
+                <div className="row mb-5">
+                  <div className="col-md-4">
+                    <div className="ftco-footer-widget mb-4">
+                      <h2 className="ftco-heading-2">About</h2>
+                      <p>
+                        Passionate web developer with a knack for turning ideas
+                        into stunning digital experiences. Proficient in
+                        front-end and back-end technologies, I thrive on
+                        creating user-friendly, responsive websites that
+                        captivate and engage
+                      </p>
+                      <ul className="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                        <li className="ftco-animate fadeInUp ftco-animated">
+                          <a
+                            href="#"
+                            style={{ fontSize: "30px", textAlign: "center" }}
+                          >
+                            <FaLinkedin />
+                          </a>
+                        </li>
+                        <li className="ftco-animate fadeInUp ftco-animated">
+                          <a
+                            href="#"
+                            style={{ fontSize: "30px", textAlign: "center" }}
+                          >
+                            {/* <FontAwesomeIcon icon="fa-brands fa-instagram" /> */}
+                            <FaInstagram />
+                            <i class="fa-brands fa-instagram"></i>
+                            {/* <span className="icon-instagram" /> */}
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="col-md">
+                    <div className="ftco-footer-widget mb-4 ml-md-4">
+                      <h2 className="ftco-heading-2">Links</h2>
+                      <ul className="list-unstyled">
+                        <li>
+                          <a href="https://nandunddh.github.io/Nandukumar/">
+                            <span className="icon-long-arrow-right mr-2" />
+                            Home
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#about">
+                            <span className="icon-long-arrow-right mr-2" />
+                            About
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#services">
+                            <span className="icon-long-arrow-right mr-2" />
+                            Services
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <span className="icon-long-arrow-right mr-2" />
+                            Projects
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#Contact">
+                            <span className="icon-long-arrow-right mr-2" />
+                            Contact
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="col-md">
+                    <div className="ftco-footer-widget mb-4">
+                      <h2 className="ftco-heading-2">Services</h2>
+                      <ul className="list-unstyled">
+                        <li>
+                          <a>
+                            <span className="icon-long-arrow-right mr-2" />
+                            Web Design
+                          </a>
+                        </li>
+                        <li>
+                          <a>
+                            <span className="icon-long-arrow-right mr-2" />
+                            Web Development
+                          </a>
+                        </li>
+                        <li>
+                          <a>
+                            <span className="icon-long-arrow-right mr-2" />
+                            App Development
+                          </a>
+                        </li>
+                        <li>
+                          <a>
+                            <span className="icon-long-arrow-right mr-2" />
+                            Graphic Design
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="col-md">
+                    <div className="ftco-footer-widget mb-4">
+                      <h2 className="ftco-heading-2">Have a Questions?</h2>
+                      <div className="block-23 mb-3">
+                        <ul>
+                          <li>
+                            <a href="#">
+                              <span className="icon icon-phone" />
+                              <span className="text">+91 9010307021</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <span className="icon icon-envelope" />
+                              <span className="text">
+                                nandukumar985@gmail.com
+                              </span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-md-12 text-center">
+                    <p>
+                      {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
+                      Copyright ©2023 All rights reserved | @NanduKumar
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </footer>
+          </div>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
