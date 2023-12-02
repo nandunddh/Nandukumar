@@ -51,7 +51,7 @@ const Home = () => {
                           Download CV
                         </a>
                       </button>
-                      <button className="ms-3 fw-bold fs-6 rounded-pill py-3 px-4 contact-me">
+                      <button className="ms-3 fw-bold fs-6 rounded-pill py-3 px-4 btn btn-outline-light contact-me">
                         <a href="https://api.whatsapp.com/send?phone=919010307021">Contact Me</a>
                       </button>
                     </div>

@@ -352,5 +352,5 @@ color: #000 !important;
 color: #000 !important;
 } */
 .contact-me a{
-  text-decoration:none;
+  all:unset;
 }
