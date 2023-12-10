@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import profileimage from "../images/profileimage.png";
 // import aboutme from '../images/aboutme.jpg'
 import footerImage from "../assets/footer-image.jpg";
@@ -13,10 +13,47 @@ import { AiFillMail, AiOutlineGlobal } from "react-icons/ai";
 import { MdDeveloperMode, MdOutlineMonitor } from "react-icons/md";
 import { CgWebsite } from "react-icons/cg";
 import { SiTaichigraphics } from "react-icons/si";
+import Navbar from "./Navbar";
 
 const Home = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  useEffect(() => {
+    // handleContactSubmit();
+  }, [email, subject, message]);
+
+  const handleContactSubmit = () => {
+    // e.preventDefault();
+    if (window.Email) {
+      window.Email.send({
+        Host: "smtp.elasticemail.com",
+        Username: "nandugoud113@gmail.com",
+        Password: "F4FABCEB0E22863BDFE3071769A9CC89161D",
+        Port: 2525,
+        To: "nandukumar985@gmail.com",
+        From: "nandugoud113@gmail.com",
+        Subject: "TEST ",
+        Body: "message",
+        // From: email,
+        // Subject: subject,
+        // Body: message,
+      })
+        .then(
+          // if(message == "")
+          // console.log(email, subject, message),
+          (message) => alert(message)
+        )
+        .catch((error) => console.error(error));
+
+      // console.log(name, email, subject, message);
+    }
+  };
+
   return (
     <>
+      <Navbar />
       <div className="containerfulid bg-dark">
         <div
           id="bannner"
@@ -28,20 +65,18 @@ const Home = () => {
               <div className="bg-dark w-100 h-100">
                 <div className="pt-5 text-warning">
                   <div className="row">
-                    <div className="col-sm-8 mb-5">
-                      <p className="text-uppercase fw-bold">Hello!</p>
+                    <div className="col-sm-12 mb-5 text-center">
+                      <p className="text-uppercase fw-bold ">Hello!</p>
                       <p className="text-white fw-bold display-2">
-                        I'm a{" "}
-                        <span className="text-warning">
-                          web <br />
-                          designer{" "}
-                          <span className="text-white">
-                            & <br /> Mern{" "}
-                          </span>{" "}
-                          stack developer
+                        I'm a <span className="text-warning">web designer</span>
+                        <br />
+                        <span className="text-white fs-3">
+                          & <br />{" "}
                         </span>
+                        <span className="text-white"> Mern </span>
+                        <span className="text-warning"> stack developer</span>
                       </p>
-                      <button className="btn btn-warning fw-bold fs-6 rounded-pill py-3 px-4">
+                      <button className="btn btn-warning fw-bold fs-6 rounded-pill py-3 px-4 mt-md-5">
                         <a
                           href={resume}
                           target="_blank"
@@ -51,17 +86,22 @@ const Home = () => {
                           Download CV
                         </a>
                       </button>
-                      <button className="ms-3 fw-bold fs-6 rounded-pill py-3 px-4 btn btn-outline-light contact-me">
-                        <a href="https://api.whatsapp.com/send?phone=919010307021">Contact Me</a>
+                      <button className="ms-3 fw-bold fs-6 rounded-pill py-3 px-4 btn btn-outline-light contact-me mt-md-5">
+                        <a
+                          href="https://api.whatsapp.com/send?phone=919010307021&text=Hello I would like to contact!&message=Hi Nandu"
+                          target="_blank"
+                        >
+                          Contact Me
+                        </a>
                       </button>
                     </div>
-                    <div className="col-sm-4">
+                    {/* <div className="col-sm-4">
                       <img
                         src={profileimage}
                         alt="Profile image"
                         className="profileimage"
                       />
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -634,12 +674,16 @@ const Home = () => {
               <div className="row no-gutters block-9">
                 <div className="col-sm-2"></div>
                 <div className="col-sm-8">
-                  <form action="#" className="bg-light p-4 p-md-5 contact-form">
+                  <form
+                    className="bg-light p-4 p-md-5 contact-form"
+                    onSubmit={handleContactSubmit}
+                  >
                     <div className="form-group py-3">
                       <input
                         type="text"
                         className="form-control"
                         placeholder="Your Name"
+                        onChange={(e) => setName(e.target.value)}
                       />
                     </div>
                     <div className="form-group py-3">
@@ -647,6 +691,7 @@ const Home = () => {
                         type="text"
                         className="form-control"
                         placeholder="Your Email"
+                        onChange={(e) => setEmail(e.target.value)}
                       />
                     </div>
                     <div className="form-group py-3">
@@ -654,6 +699,7 @@ const Home = () => {
                         type="text"
                         className="form-control"
                         placeholder="Subject"
+                        onChange={(e) => setSubject(e.target.value)}
                       />
                     </div>
                     <div className="form-group py-3">
@@ -665,6 +711,7 @@ const Home = () => {
                         className="form-control"
                         placeholder="Message"
                         defaultValue={""}
+                        onChange={(e) => setMessage(e.target.value)}
                       />
                     </div>
                     <div className="form-group text-center">

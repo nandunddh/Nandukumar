@@ -55,9 +55,9 @@ const Navbar = () => {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link text-white" href="#Contact">
+            <Link className="nav-link text-white" to="contact">
               Contact
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
