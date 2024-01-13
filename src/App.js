@@ -8,13 +8,13 @@ function App() {
   return (
     <>
       {/* <Navbar /> */}
-      {/* <Home /> */}
+      <Home />
 
-      <Routes>
-        <Route exact path="/Nandukumar" element={<Home />} />
+      {/* <Routes> */}
+        {/* <Route exact path="/Nandukumar" element={<Home />} /> */}
         {/* <Route path="/#about" element={<Home />} /> */}
         {/* <Route path="/Nandukumar/contact" element={<Contact />} /> */}
-      </Routes>
+      {/* </Routes> */}
     </>
   )
 }
