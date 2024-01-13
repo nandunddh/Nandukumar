@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link'
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-dark py-3" data-bs-theme="dark">
+    <nav className="navbar navbar-expand-lg fixed-top bg-dark py-3" data-bs-theme="dark">
       <div className="container">
         <Link className="navbar-brand text-white fs-3 fw-bold" to="https://nandunddh.github.io/Nandukumar/">
           ND
@@ -30,34 +31,34 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link text-white" href="#about">
+            <HashLink className="nav-link text-white" to="#about">
               About
-            </a>
+            </HashLink>
           </li>
           <li className="nav-item">
-            <a className="nav-link text-white" href="#academics">
+            <HashLink className="nav-link text-white" to="#academics">
             Academics
-            </a>
+            </HashLink>
           </li>
           <li className="nav-item">
-            <a className="nav-link text-white" href="#services">
+            <HashLink className="nav-link text-white" to="#services">
               Services
-            </a>
+            </HashLink>
           </li>
           <li className="nav-item">
-            <a className="nav-link text-white" href="#My Skills">
+            <HashLink className="nav-link text-white" to="#My Skills">
               Skills
-            </a>
+            </HashLink>
           </li>
           <li className="nav-item">
-            <a className="nav-link text-white" href="#">
+            <HashLink className="nav-link text-white" to="#">
               Projects
-            </a>
+            </HashLink>
           </li>
           <li className="nav-item">
-            <Link className="nav-link text-white" to="contact">
+            <HashLink className="nav-link text-white" to="#Contact">
               Contact
-            </Link>
+            </HashLink>
           </li>
         </ul>
       </div>

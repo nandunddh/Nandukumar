@@ -7,11 +7,12 @@ import Contact from './components/Contact'
 function App() {
   return (
     <>
-      <Navbar />
-      <Home />
+      {/* <Navbar /> */}
+      {/* <Home /> */}
 
       <Routes>
         <Route path="/" element={<Home />} />
+        {/* <Route path="/#about" element={<Home />} /> */}
         <Route path="contact" element={<Contact />} />
       </Routes>
     </>
