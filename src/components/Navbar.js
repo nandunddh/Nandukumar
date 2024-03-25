@@ -31,7 +31,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <HashLink className="nav-link text-white" to="#about">
+            <HashLink className="nav-link text-white" to="about">
               About
             </HashLink>
           </li>
@@ -56,7 +56,7 @@ const Navbar = () => {
             </HashLink>
           </li>
           <li className="nav-item">
-            <HashLink className="nav-link text-white" to="#Contact">
+            <HashLink className="nav-link text-white" to="Contact">
               Contact
             </HashLink>
           </li>
