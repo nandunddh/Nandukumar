@@ -9,12 +9,12 @@ function App() {
   return (
     <>
       <Navbar />
-      {/* <Home /> */}
+      <Home />
 
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="about" element={<About />} />
-        <Route path="/Contact" element={<Contact />} />
+        <Route path="Contact" element={<Contact />} />
       </Routes>
     </>
   );

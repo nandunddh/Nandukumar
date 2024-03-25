@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <div className="containerfulid bg-dark">
+      <div className="containerfulid bg-dark" id="home">
         <div
           id="bannner"
           className="carousel slide mb-5 pt-3"

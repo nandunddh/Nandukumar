@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg fixed-top bg-dark py-3" data-bs-theme="dark">
       <div className="container">
-        <Link className="navbar-brand text-white fs-3 fw-bold" to="https://nandunddh.github.io/Nandukumar/">
+        <Link className="navbar-brand text-white fs-3 fw-bold" to="/">
           ND
         </Link>
         <button
@@ -25,7 +25,7 @@ const Navbar = () => {
             <Link
               className="nav-link active text-warning"
               aria-current="page"
-              to="https://nandunddh.github.io/Nandukumar/"
+              to="/#home"
             >
               Home
             </Link>
@@ -36,17 +36,17 @@ const Navbar = () => {
             </HashLink>
           </li>
           <li className="nav-item">
-            <HashLink className="nav-link text-white" to="#academics">
+            <HashLink className="nav-link text-white" to="/#academics">
             Academics
             </HashLink>
           </li>
           <li className="nav-item">
-            <HashLink className="nav-link text-white" to="#services">
+            <HashLink className="nav-link text-white" to="/#services">
               Services
             </HashLink>
           </li>
           <li className="nav-item">
-            <HashLink className="nav-link text-white" to="#My Skills">
+            <HashLink className="nav-link text-white" to="/#My Skills">
               Skills
             </HashLink>
           </li>
