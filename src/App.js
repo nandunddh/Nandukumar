@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <Home />
+      {/* <Home /> */}
 
       <Routes>
         <Route exact path="/" element={<Home />} />
