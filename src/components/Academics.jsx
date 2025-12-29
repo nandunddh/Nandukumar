@@ -58,7 +58,7 @@ const Academics = () => {
           </div>
           <div className="col-sm-6 py-4">
             <div className="bg-lightshade rounded">
-              <h1 className="text-warning fw-bold">August 2022-October 2022</h1>
+              <h1 className="text-warning fw-bold">Aug 2022-Oct 2022</h1>
               <h1 className="">MERN Stack Web Development Course</h1>
               <h6 className="color-gray fw-bold pb-4">
                 Henry Harvin Education{" "}
