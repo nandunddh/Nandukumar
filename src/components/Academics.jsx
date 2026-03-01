@@ -1,94 +1,85 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import resume from "../assets/pdfs/Cv-Resume.pdf";
+import useScrollReveal from "../hooks/useScrollReveal";
+
+const milestones = [
+  {
+    year: "2015 – 2016",
+    title: "Secondary School (SSC)",
+    institution: "Oasis School of Excellence",
+    grade: "8.7 CGPA",
+  },
+  {
+    year: "2016 – 2019",
+    title: "Diploma in Computer Science",
+    institution: "TRR College of Technology",
+    grade: "77%",
+  },
+  {
+    year: "2019 – 2022",
+    title: "B.Tech – Computer Science Engineering",
+    institution: "J.B. Institute of Engineering & Technology",
+    grade: "7.4 GPA",
+  },
+  {
+    year: "Aug 2022 – Oct 2022",
+    title: "MERN Stack Web Development",
+    institution: "Henry Harvin Education",
+    grade: "Certified",
+  },
+];
 
 const Academics = () => {
-  return (
-    <div className="container bg-dark resume" id="academics">
-      <div className="text-white">
-        <div className="text-center">
-          <p className="big bigresume text-center">Academics</p>
-          <p className="fs-1 fw-bold">Academics</p>
-          {/* <p className="fs-5 pt-3 aboutdesc">
-                A small river named Nandu flows by their place and suppliest it
-                witth the necessary regelialia.
-              </p> */}
-        </div>
-        <div className="row pb-5">
-          <div className="col-sm-6 py-4">
-            <div className="bg-lightshade rounded">
-              <h1 className="text-warning fw-bold">2015-2016</h1>
-              <h1 className="">Secondary School</h1>
-              <h6 className="color-gray fw-bold">OASIS SCHOOL OF EXCELLENCE</h6>
-              <h6 className="color-gray fw-bold">8.7 CGPA</h6>
-            </div>
-          </div>
-          <div className="col-sm-6 py-4">
-            <div className="bg-lightshade rounded">
-              <h1 className="text-warning fw-bold">2016-2019</h1>
-              <h1 className="">Diploma In Computer's</h1>
-              <h6 className="color-gray fw-bold text-uppercase text-justify">
-                TRR College of Technology
-              </h6>
-              <h6 className="color-gray fw-bold text-uppercase text-justify">
-                77%
-              </h6>
-              {/* <h6 className="color-gray fw-bold my-3">
-                    A Diploma in Computer Engineering is a diploma programme
-                    that provides fundamental knowledge on computer science,
-                    mathematics and computing techniques and engineering
-                    concepts.
-                  </h6> */}
-            </div>
-          </div>
-          <div className="col-sm-6 py-4">
-            <div className="bg-lightshade rounded">
-              <h1 className="text-warning fw-bold">2019-2022</h1>
-              <h1 className="">B.Tech - Computer Science Engineering</h1>
-              <h6 className="color-gray fw-bold text-uppercase">
-                J.B. Institute of Engineering & Technology
-              </h6>
-              <h6 className="color-gray fw-bold text-uppercase">7.4 GPA</h6>
-              {/* <h6 className="color-gray fw-bold my-3 text-justify">
-                    B.Tech (CSE) is a 4 year undergraduate course offering
-                    specialization in computer programming languages and
-                    computer system technologies.
-                  </h6> */}
-            </div>
-          </div>
-          <div className="col-sm-6 py-4">
-            <div className="bg-lightshade rounded">
-              <h1 className="text-warning fw-bold">Aug 2022-Oct 2022</h1>
-              <h1 className="">MERN Stack Web Development Course</h1>
-              <h6 className="color-gray fw-bold pb-4">
-                Henry Harvin Education{" "}
-              </h6>
+  const title = useScrollReveal();
+  const timeline = useScrollReveal();
 
-              {/* <h6 className="color-gray fw-bold my-3 text-justify">
-                    MERN stack is the most in-demand Full Stack Web Development
-                    structure. It helps in the enhancement of Applications. MERN
-                    Stack covers both back-end and front-end servers and equips
-                    the learner with the advantage of using a single programming
-                    language i.e JavaScript, making it the most effective Web
-                    Development process.
-                  </h6> */}
+  return (
+    <section className="section" id="academics" style={{ background: 'var(--bg-secondary)' }}>
+      <div className="container">
+        <div
+          ref={title.ref}
+          className={`section-title-wrapper reveal${title.isVisible ? " visible" : ""}`}
+        >
+          <div className="section-label">Education</div>
+          <h2 className="section-title">My <span className="gradient-text">Academics</span></h2>
+          <div className="section-divider" />
+        </div>
+
+        <div className="row justify-content-center">
+          <div className="col-lg-8">
+            <div ref={timeline.ref} className="timeline">
+              {milestones.map((m, i) => (
+                <div
+                  key={m.year}
+                  className={`timeline-item reveal${timeline.isVisible ? " visible" : ""}`}
+                  style={{ transitionDelay: `${i * 0.13}s` }}
+                >
+                  <div className="timeline-dot" />
+                  <div className="glass-card p-4">
+                    <div className="timeline-year">{m.year}</div>
+                    <div className="timeline-title">{m.title}</div>
+                    <div className="timeline-institution">{m.institution}</div>
+                    <span className="timeline-grade">{m.grade}</span>
+                  </div>
+                </div>
+              ))}
             </div>
-          </div>
-          <div className="text-center mt-4">
-            <button className="btn btn-warning px-4 py-3 fw-bold rounded-pill">
-              <Link
-                to={resume}
+
+            <div className="text-center mt-5">
+              <a
+                href={process.env.PUBLIC_URL + '/Nanduresume-2026.pdf'}
                 target="_blank"
-                download="Nandu-Resume"
+                download="Nanduresume-2026"
                 rel="noreferrer"
+                className="btn-gradient"
               >
-                Download CV
-              </Link>
-            </button>
+                ↓ Download Full CV
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

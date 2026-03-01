@@ -1,174 +1,234 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import { Link } from "react-router-dom";
-import { AiFillMail, AiOutlineGlobal } from "react-icons/ai";
+import { AiFillMail } from "react-icons/ai";
 import { FaMapLocationDot, FaPhone } from "react-icons/fa6";
+import useScrollReveal from "../hooks/useScrollReveal";
+
+const contactInfo = [
+  {
+    icon: <FaMapLocationDot />,
+    title: "Address",
+    value: "Hyderabad, Telangana, India",
+  },
+  {
+    icon: <FaPhone />,
+    title: "Phone",
+    value: "+91 9010307021",
+    href: "tel:+919010307021",
+  },
+  {
+    icon: <AiFillMail />,
+    title: "Email",
+    value: "nandukumar985@gmail.com",
+    href: "mailto:nandukumar985@gmail.com",
+  },
+];
 
 const Contact = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
-  const [message, setMessage] = useState("");
-  useEffect(() => {
-    // handleContactSubmit();
-  }, [email, subject, message]);
+  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "", botInput: "" });
+  const [isSending, setIsSending] = useState(false);
+  const [mailStatus, setMailStatus] = useState(null); // 'success' or 'error'
+  const formRef = useRef(null);
+  const title = useScrollReveal();
+  const infoRow = useScrollReveal();
+  const formCard = useScrollReveal();
 
-  const handleContactSubmit = () => {
-    // e.preventDefault();
-    if (window.Email) {
-      window.Email.send({
-        Host: "smtp.elasticemail.com",
-        Username: "nandugoud113@gmail.com",
-        Password: "F4FABCEB0E22863BDFE3071769A9CC89161D",
-        Port: 2525,
-        To: "nandukumar985@gmail.com",
-        From: "nandugoud113@gmail.com",
-        Subject: "TEST ",
-        Body: "message",
-        // From: email,
-        // Subject: subject,
-        // Body: message,
-      })
-        .then(
-          // if(message == "")
-          // console.log(email, subject, message),
-          (message) => alert(message)
-        )
-        .catch((error) => console.error(error));
+  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
-      // console.log(name, email, subject, message);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSending(true);
+    setMailStatus(null);
+
+    // Bot prevention (Honeypot) - bots typically fill all fields, even hidden ones.
+    if (form.botInput) {
+      setIsSending(false);
+      setMailStatus('success'); // pretend it succeeded
+      setForm({ name: "", email: "", subject: "", message: "", botInput: "" });
+      setTimeout(() => setMailStatus(null), 5000);
+      return;
     }
+
+    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      console.error("EmailJS keys are missing in .env");
+      setMailStatus('error');
+      setIsSending(false);
+      return;
+    }
+
+    emailjs
+      .send(
+        serviceId,
+        templateId,
+        {
+          name: form.name,
+          email: form.email,
+          subject: form.subject || "No Subject",
+          message: form.message,
+          time: new Date().toLocaleString(),
+        },
+        publicKey
+      )
+      .then(
+        () => {
+          setIsSending(false);
+          setMailStatus('success');
+          setForm({ name: "", email: "", subject: "", message: "", botInput: "" });
+          // Clear success message after 5 seconds
+          setTimeout(() => setMailStatus(null), 5000);
+        },
+        (error) => {
+          console.error(error);
+          setIsSending(false);
+          setMailStatus('error');
+          // Clear error message after 5 seconds
+          setTimeout(() => setMailStatus(null), 5000);
+        }
+      );
   };
+
   return (
-    <div className="container bg-dark resume" id="Contact">
-      <div className="text-white">
-        <div className="text-center pb-5 mt-5">
-          <p className="big bigresume text-center">Contact Me</p>
-          <p className="fs-1 fw-bold">Contact Me</p>
-          {/* <p className="fs-5 pt-3 aboutdesc">
-                A small river named Nandu flows by their place and suppliest it
-                witth the necessary regelialia.
-              </p> */}
+    <section className="section contact-section-bg" id="Contact">
+      <div className="container">
+        {/* Header */}
+        <div
+          ref={title.ref}
+          className={`section-title-wrapper reveal${title.isVisible ? " visible" : ""}`}
+        >
+          <div className="section-label">Get in Touch</div>
+          <h2 className="section-title">Contact <span className="gradient-text">Me</span></h2>
+          <div className="section-divider" />
         </div>
-        <div>
-          <div className="row d-flex contact-info mb-5 contact-section">
-            <div className="col-md-6 col-lg-3 ftco-animate fadeInUp ftco-animated">
-              <div className="align-self-stretch box p-4 text-center">
-                <div className="icon d-flex align-items-center justify-content-center">
-                  {/* <span className="icon-map-signs" /> */}
-                  <FaMapLocationDot
-                    style={{ fontSize: "40px", color: "#ffbd39" }}
-                  />
-                </div>
-                <h4 className="mb-4">Address</h4>
-                <p>
-                  3-26, Narkhda, Shamshabad, RR.Dist, Telangana, India 501218
-                </p>
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-3 ftco-animate fadeInUp ftco-animated">
-              <div className="align-self-stretch box p-4 text-center">
-                <div className="icon d-flex align-items-center justify-content-center">
-                  <span className="icon-phone2" />
-                  <FaPhone style={{ fontSize: "40px", color: "#ffbd39" }} />
-                </div>
-                <h4 className="mb-4">Contact Number</h4>
-                <p>
-                  <Link to="tel://9010307021" className="text-white">
-                    +91 9010307021
-                  </Link>
-                </p>
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-3 ftco-animate fadeInUp ftco-animated">
-              <div className="align-self-stretch box p-4 text-center">
-                <div className="icon d-flex align-items-center justify-content-center">
-                  <span className="icon-paper-plane" />
-                  <AiFillMail style={{ fontSize: "40px", color: "#ffbd39" }} />
-                </div>
-                <h4 className="mb-4">Email Address</h4>
-                <p>
-                  <Link
-                    to="mailto:nandukumar985@gmail.com"
-                    className="text-white"
-                  >
-                    nandukumar985@gmail.com
-                  </Link>
-                </p>
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-3 ftco-animate fadeInUp ftco-animated">
-              <div className="align-self-stretch box p-4 text-center">
-                <div className="icon d-flex align-items-center justify-content-center">
-                  <span className="icon-globe" />
-                  <AiOutlineGlobal
-                    style={{ fontSize: "40px", color: "#ffbd39" }}
-                  />
-                </div>
-                <h4 className="mb-4">Website</h4>
-                <p>
-                  <Link to="#" className="text-white strike">
-                    <del>updated Soon</del>
-                  </Link>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="row no-gutters block-9">
-            <div className="col-sm-2"></div>
-            <div className="col-sm-8">
-              <form
-                className="bg-light p-4 p-md-5 contact-form"
-                onSubmit={handleContactSubmit}
+
+        {/* Info cards row */}
+        <div ref={infoRow.ref} className="row g-3 mb-5">
+          {contactInfo.map((item, i) => (
+            <div className="col-sm-6 col-lg-4" key={item.title}>
+              <div
+                className={`glass-card contact-info-card reveal${infoRow.isVisible ? " visible" : ""}`}
+                style={{ transitionDelay: `${i * 0.1}s` }}
               >
-                <div className="form-group py-3">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Your Name"
-                    onChange={(e) => setName(e.target.value)}
-                  />
+                <div className="contact-icon-box">{item.icon}</div>
+                <div>
+                  <div className="contact-info-title">{item.title}</div>
+                  {item.href ? (
+                    <Link to={item.href} className="contact-info-value" style={{ color: 'var(--text-primary)' }}>
+                      {item.value}
+                    </Link>
+                  ) : (
+                    <div className="contact-info-value">{item.value}</div>
+                  )}
                 </div>
-                <div className="form-group py-3">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Your Email"
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Contact Form */}
+        <div className="row justify-content-center">
+          <div className="col-lg-8">
+            <div
+              ref={formCard.ref}
+              className={`glass-card contact-form-wrap reveal${formCard.isVisible ? " visible" : ""}`}
+            >
+              <h3 style={{ fontWeight: 700, color: 'var(--text-primary)', marginBottom: 8 }}>
+                Send a Message
+              </h3>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: 28 }}>
+                Got a question or proposal? Don't hesitate to reach out.
+              </p>
+
+              <form ref={formRef} onSubmit={handleSubmit}>
+                {/* Honeypot field for bot prevention */}
+                <input
+                  type="text"
+                  name="botInput"
+                  value={form.botInput}
+                  onChange={handleChange}
+                  style={{ display: "none" }}
+                  tabIndex="-1"
+                  autoComplete="off"
+                />
+
+                <div className="row g-3 mb-3">
+                  <div className="col-sm-6">
+                    <input
+                      className="nd-input"
+                      type="text"
+                      name="name"
+                      placeholder="Your Name"
+                      value={form.name}
+                      onChange={handleChange}
+                      required
+                      disabled={isSending}
+                    />
+                  </div>
+                  <div className="col-sm-6">
+                    <input
+                      className="nd-input"
+                      type="email"
+                      name="email"
+                      placeholder="Your Email"
+                      value={form.email}
+                      onChange={handleChange}
+                      required
+                      disabled={isSending}
+                    />
+                  </div>
                 </div>
-                <div className="form-group py-3">
+                <div className="mb-3">
                   <input
+                    className="nd-input"
                     type="text"
-                    className="form-control"
+                    name="subject"
                     placeholder="Subject"
-                    onChange={(e) => setSubject(e.target.value)}
+                    value={form.subject}
+                    onChange={handleChange}
+                    disabled={isSending}
                   />
                 </div>
-                <div className="form-group py-3">
+                <div className="mb-4">
                   <textarea
-                    name
-                    id
-                    cols={30}
-                    rows={7}
-                    className="form-control"
-                    placeholder="Message"
-                    defaultValue={""}
-                    onChange={(e) => setMessage(e.target.value)}
+                    className="nd-input nd-textarea"
+                    name="message"
+                    placeholder="Your Message..."
+                    value={form.message}
+                    onChange={handleChange}
+                    required
+                    disabled={isSending}
                   />
                 </div>
-                <div className="form-group text-center">
-                  <input
-                    type="submit"
-                    defaultValue="Send Message"
-                    className="btn btn-warning px-4 py-3 fw-bold rounded-pill text-uppercase"
-                  />
-                </div>
+
+                {mailStatus === 'success' && (
+                  <div style={{ padding: '12px', background: 'rgba(34, 197, 94, 0.1)', border: '1px solid rgba(34,197,94,0.3)', color: '#4ade80', borderRadius: '8px', marginBottom: '16px', fontSize: '0.9rem', textAlign: 'center' }}>
+                    ✅ Message sent successfully! I will get back to you soon.
+                  </div>
+                )}
+                {mailStatus === 'error' && (
+                  <div style={{ padding: '12px', background: 'rgba(239, 68, 68, 0.1)', border: '1px solid rgba(239,68,68,0.3)', color: '#f87171', borderRadius: '8px', marginBottom: '16px', fontSize: '0.9rem', textAlign: 'center' }}>
+                    ❌ Failed to send message. Please ensure your .env keys are correct or try again later.
+                  </div>
+                )}
+
+                <button
+                  type="submit"
+                  className="btn-gradient w-100 justify-content-center"
+                  style={{ fontSize: '1rem', padding: '16px', opacity: isSending ? 0.7 : 1, cursor: isSending ? 'not-allowed' : 'pointer' }}
+                  disabled={isSending}
+                >
+                  {isSending ? 'Sending...' : 'Send Message →'}
+                </button>
               </form>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
